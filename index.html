@@ -1,11 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Team Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Profile Screener</title>
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* The Main Container Box */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+        }
+
+        p.subtitle {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't widen the box */
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .optional-tag {
+            font-weight: normal;
+            font-size: 0.85rem;
+            color: #999;
+            margin-left: 5px;
+        }
+
+        /* The Button */
+        button {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Our Team Site</h1>
-    <p>Hi Misha this is a prototype vibez</p>
+
+    <div class="container">
+        <header>
+            <h1>College Profile Screener</h1>
+            <p class="subtitle">Upload your profile details below to receive personalized guidance.</p>
+        </header>
+
+        <form id="screenerForm">
+            
+            <div class="form-group">
+                <label for="gpa">Unweighted GPA (4.0 Scale)</label>
+                <input type="number" id="gpa" name="gpa" step="0.01" min="0" max="4.0" placeholder="e.g. 3.8">
+            </div>
+
+            <div class="form-group">
+                <label for="testScore">SAT/ACT Score <span class="optional-tag">(Optional)</span></label>
+                <input type="text" id="testScore" name="testScore" placeholder="e.g. SAT 1450 or ACT 32">
+            </div>
+
+            <div class="form-group">
+                <label for="major">Intended Major / Interest</label>
+                <input type="text" id="major" name="major" placeholder="e.g. Computer Science, Biology, Undecided">
+            </div>
+
+            <div class="form-group">
+                <label for="activities">Extracurricular Activities</label>
+                <textarea id="activities" name="activities" rows="4" placeholder="List your main activities, sports, or leadership roles..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="about">About You <span class="optional-tag">(Optional)</span></label>
+                <textarea id="about" name="about" rows="3" placeholder="Tell us a little about your background or goals..."></textarea>
+            </div>
+
+            <button type="button" onclick="submitData()">Submit Profile</button>
+        </form>
+    </div>
+
+    <script>
+        function submitData() {
+            // Currently, this just prevents the page from reloading 
+            // and shows an alert so you know the button works.
+            alert("Profile Submitted! (This is a demo)");
+        }
+    </script>
+
 </body>
 </html>
-
