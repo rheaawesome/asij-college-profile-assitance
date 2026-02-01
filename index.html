@@ -9,6 +9,10 @@
 </head>
 <body>
 
+    <header class="asij-banner">
+        <div class="banner-logo">ASIJ</div>
+    </header>
+
     <section class="hero">
         <div class="hero-content">
             <h1 class="main-title">College Profile Screener</h1>
@@ -18,24 +22,64 @@
 
     <section id="info-section" class="info-section">
         <h2 class="serif-text">Welcome ASIJ Students</h2>
-        <p class="subtitle">Personalized recommendations for ASIJ students based on your courses, interests, and activities.</p>
-        
+        <p class="subtitle">Personalized recommendations based on your unique profile.</p>
         <div class="info-grid">
-            <div class="info-card">
-                <div class="card-img" style="background-image: url('card1.png');"></div>
-                <div class="card-label">Built for ASIJ students</div>
-            </div>
-            <div class="info-card">
-                <div class="card-img" style="background-image: url('card2.png');"></div>
-                <div class="card-label">Find your passion</div>
-            </div>
-            <div class="info-card">
-                <div class="card-img" style="background-image: url('card3.png');"></div>
-                <div class="card-label">Discover new opportunities</div>
-            </div>
+            <div class="info-card"><div class="card-img" style="background-image: url('card1.png');"></div><div class="card-label">Built for ASIJ</div></div>
+            <div class="info-card"><div class="card-img" style="background-image: url('card2.png');"></div><div class="card-label">Find your passion</div></div>
+            <div class="info-card"><div class="card-img" style="background-image: url('card3.png');"></div><div class="card-label">New Opportunities</div></div>
         </div>
-        <button onclick="scrollToSection('form-section')" class="next-btn">Next: Tell us about you</button>
+        <button onclick="scrollToSection('form-section')" class="next-btn">Begin Assessment</button>
     </section>
 
-    </body>
+    <section id="form-section" class="form-section">
+        <h2 class="serif-text gold-text">Tell Us About You</h2>
+        <hr class="gold-divider">
+        
+        <form id="screener-form">
+            <div class="input-container">
+                <h3>Current Grade Level</h3>
+                <div class="grade-options">
+                    <button type="button" class="chip" onclick="selectChip(this, 'grade')">Freshman</button>
+                    <button type="button" class="chip" onclick="selectChip(this, 'grade')">Sophomore</button>
+                    <button type="button" class="chip" onclick="selectChip(this, 'grade')">Junior</button>
+                    <button type="button" class="chip" onclick="selectChip(this, 'grade')">Senior</button>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <h3>Academics</h3>
+                <textarea id="past-courses" placeholder="List your past courses (e.g., Biology, Algebra II)..."></textarea>
+                <textarea id="current-courses" placeholder="List your current courses..."></textarea>
+            </div>
+
+            <div class="input-container">
+                <h3>Interests & Extracurriculars</h3>
+                <div class="interest-grid">
+                    <label class="check-container">Mathematics <input type="checkbox"><span class="checkmark"></span></label>
+                    <label class="check-container">Sciences <input type="checkbox"><span class="checkmark"></span></label>
+                    <label class="check-container">Arts <input type="checkbox"><span class="checkmark"></span></label>
+                    <label class="check-container">Sports <input type="checkbox"><span class="checkmark"></span></label>
+                </div>
+                <input type="text" id="extracurriculars" placeholder="Notable clubs or activities (e.g., MUN, Varsity Soccer)">
+            </div>
+
+            <button type="button" onclick="startLoading()" class="submit-btn">Generate My Profile</button>
+        </form>
+    </section>
+
+    <section id="loading-section" class="loading-section hidden">
+        <div class="mustang-container">
+            <div class="mustang-spinner"></div>
+            </div>
+        <h2 class="serif-text">Analyzing your path...</h2>
+    </section>
+
+    <section id="results-section" class="results-section hidden">
+        <h2 class="serif-text">Recommended For You</h2>
+        <div id="recommendations-list" class="results-grid"></div>
+        <button onclick="location.reload()" class="start-btn">Reset</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
 </html>
