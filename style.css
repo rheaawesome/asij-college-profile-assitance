@@ -1,0 +1,68 @@
+:root {
+    --gold: #D4AF37;
+    --black: #000000;
+    --white: #ffffff;
+    --dark-grey: #1a1a1a;
+}
+
+body, html {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Hero Image Placeholder */
+.hero {
+    background: url('your-graduation-image.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.start-btn {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.info-section { background-color: var(--gold); color: var(--black); }
+
+.info-grid { display: flex; gap: 20px; margin-top: 30px; }
+
+.info-card {
+    background: var(--black);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-section { background-color: var(--black); }
+
+.hidden { display: none !important; }
+
+/* Simple Loader */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid var(--gold);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
