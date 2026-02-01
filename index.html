@@ -3,74 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Profile Screener</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>ASIJ College Profile Screener</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <style>
-        /* 1. RESET & BASIC SETUP */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: 'Arial', sans-serif;
-        }
+    <section class="hero">
+        <div class="top-nav">ASIJ</div>
+        <div class="hero-center">
+            <h1>College Profile Screener</h1>
+            <button onclick="scrollToSection('welcome')" class="start-btn">Start</button>
+        </div>
+    </section>
 
-        /* 2. NAVIGATION BAR */
-        .navbar {
-            background-color: #1a1a1a; /* Dark black/gray */
-            padding: 15px 30px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            color: #FFD700; /* ASIJ Gold */
-            font-weight: 900;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* 3. HERO SECTION */
-        .hero {
-            /* UPDATED: Uses your specific filename here */
-            background-image: url('hero-bg.jpg'); 
+    <section id="welcome" class="welcome-section">
+        <div class="welcome-content">
+            <h2 class="serif-title">Welcome ASIJ Students</h2>
+            <p class="description">Personalized recommendations for ASIJ students based on your courses, interests, and activities.</p>
             
-            /* Ensures the image covers the whole screen */
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat;
-            
-            height: 100vh; /* 100% of the Viewport Height */
-            width: 100%;
-            
-            /* Center the content */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            
-            /* Dark overlay so text reads well */
-            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2); 
-        }
+            <div class="image-grid">
+                <div class="card">
+                    <img src="card1.png" alt="Students with mascot">
+                    <div class="card-label">Built for ASIJ students</div>
+                </div>
+                <div class="card">
+                    <img src="card2.png" alt="Students studying">
+                    <div class="card-label">Find your passion</div>
+                </div>
+                <div class="card">
+                    <img src="card3.png" alt="Mustangs sports">
+                    <div class="card-label">Discover new opportunities</div>
+                </div>
+            </div>
+            <button onclick="scrollToSection('form')" class="continue-btn">Continue</button>
+        </div>
+    </section>
 
-        /* 4. THE MAIN TITLE */
-        .hero h1 {
-            color: white;
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-            text-align: center;
-            padding: 0 20px;
-        }
+    <section id="form" class="form-section">
+        <h2 class="serif-title white-text">Tell Us About You</h2>
+        <hr class="gold-line">
 
-        /* 5. THE START BUTTON */
-        .start-btn {
-            background-color: #d4af37; /* Mustard/Gold */
-            color: black;
-            font-family: 'Playfair Display', serif;
-            font-size:
+        <div class="input-block">
+            <h3>Current Grade Level</h3>
+            <div class="options">
+                <span class="text-btn red">Freshman</span>
+                <span class="text-btn pink">Sophmore</span>
+                <span class="text-btn blue">Junior</span>
+                <span class="text-btn green">Senior</span>
+            </div>
+        </div>
+
+        <div class="input-block">
+            <h3>Select All Courses You Have or Are Taking</h3>
+            <textarea placeholder="Pull from the student handbook..."></textarea>
+        </div>
+
+        <div class="input-block">
+            <h3>Interests (Select All That Apply)</h3>
+            <div class="interests-grid">
+                <span class="text-btn red">Mathematics</span>
+                <span class="text-btn green">Sciences</span>
+                <span class="text-btn lavender">Computer Science</span>
+                <span class="text-btn blue">Engineering</span>
+                <span class="text-btn gold">Business</span>
+                <span class="text-btn orange">Social Sciences & Humanities</span>
+                <span class="text-btn sky">Health & Medicine</span>
+                <span class="text-btn magenta">Arts & Communications</span>
+                <span class="text-btn lightblue">Education & Public Service</span>
+                <span class="text-btn darkgreen">Agriculture & Environmental Studies</span>
+            </div>
+        </div>
+
+        <button onclick="showLoading()" class="submit-trigger">Submit Profile</button>
+    </section>
+
+    <div id="loading" class="overlay hidden">
+        <div class="spinner"></div>
+        <p>Analyzing ASIJ Database...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
