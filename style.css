@@ -1,64 +1,122 @@
-/* BANNER STYLES */
-.asij-banner {
-    background-color: #000;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid var(--gold);
+:root {
+    --gold: #D4AF37;
+    --black: #000000;
 }
 
-.banner-logo {
+body, html {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--black);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* Header Banner */
+.asij-header {
+    background: var(--black);
+    padding: 15px 40px;
     color: var(--gold);
-    font-weight: 800;
-    font-size: 1.8rem;
-    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
 }
 
-/* FORM STYLES */
-.input-container { margin-bottom: 40px; text-align: left; max-width: 600px; width: 100%; }
-.gold-text { color: var(--gold); }
-.gold-divider { border: 1px solid var(--gold); width: 100px; margin-bottom: 40px; }
+/* Hero Section Styles */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero-bg.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-textarea, input[type="text"] {
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    margin-bottom: 30px;
+}
+
+.gold-btn {
+    background: var(--gold);
+    color: black;
+    padding: 15px 60px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Yellow Slant Section */
+.welcome-section {
+    background: var(--gold);
+    color: black;
+    padding: 100px 5%;
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    text-align: center;
+}
+
+.card-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.img-box {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.label {
+    background: black;
+    color: var(--gold);
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Form Styling */
+.form-section { padding: 100px 10%; text-align: center; }
+.form-section h2 { font-family: 'Playfair Display', serif; font-size: 3rem; }
+
+textarea {
     width: 100%;
-    background: #1a1a1a;
-    border: 1px solid #333;
+    height: 80px;
+    background: #111;
+    border: 1px solid var(--gold);
     color: white;
     padding: 15px;
-    margin-top: 10px;
+    margin: 10px 0 30px 0;
     font-family: 'Montserrat';
-    border-radius: 4px;
 }
 
 .chip {
-    background: none;
     border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 8px 20px;
-    border-radius: 20px;
-    margin-right: 10px;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
     cursor: pointer;
-    transition: 0.3s;
+    color: var(--gold);
 }
 
 .chip.active { background: var(--gold); color: black; }
 
-/* MUSTANG LOADING ANIMATION */
-.mustang-spinner {
-    width: 100px;
-    height: 100px;
-    background: url('mustang.png') center/contain no-repeat;
-    animation: pulse 1.5s ease-in-out infinite;
-}
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.8; }
-}
+.hidden { display: none; }
 
+/* Mustang Loading */
+.mustang-spin {
+    width: 80px;
+    height: 80px;
+    border: 5px solid rgba(212, 175, 55, 0.1);
+    border-top: 5px solid var(--gold);
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    margin: 0 auto 20px auto;
+}
 @keyframes spin { 100% { transform: rotate(360deg); } }
