@@ -9,75 +9,64 @@
 </head>
 <body>
 
-    <header class="asij-banner">
-        <div class="banner-logo">ASIJ</div>
-    </header>
+    <div class="asij-header">ASIJ</div>
 
     <section class="hero">
         <div class="hero-content">
-            <h1 class="main-title">College Profile Screener</h1>
-            <button onclick="scrollToSection('info-section')" class="start-btn">Start</button>
+            <h1>College Profile Screener</h1>
+            <button onclick="scrollToSection('info-section')" class="gold-btn">Start</button>
         </div>
     </section>
 
-    <section id="info-section" class="info-section">
-        <h2 class="serif-text">Welcome ASIJ Students</h2>
-        <p class="subtitle">Personalized recommendations based on your unique profile.</p>
-        <div class="info-grid">
-            <div class="info-card"><div class="card-img" style="background-image: url('card1.png');"></div><div class="card-label">Built for ASIJ</div></div>
-            <div class="info-card"><div class="card-img" style="background-image: url('card2.png');"></div><div class="card-label">Find your passion</div></div>
-            <div class="info-card"><div class="card-img" style="background-image: url('card3.png');"></div><div class="card-label">New Opportunities</div></div>
+    <section id="info-section" class="welcome-section">
+        <div class="welcome-content">
+            <h2>Welcome ASIJ Students</h2>
+            <p>Personalized recommendations for ASIJ students based on your courses, interests, and activities.</p>
+            <div class="card-row">
+                <div class="card"><div class="img-box" style="background-image:url('card1.png')"></div><div class="label">Built for ASIJ students</div></div>
+                <div class="card"><div class="img-box" style="background-image:url('card2.png')"></div><div class="label">Find your passion</div></div>
+                <div class="card"><div class="img-box" style="background-image:url('card3.png')"></div><div class="label">Discover new opportunities</div></div>
+            </div>
+            <button onclick="scrollToSection('form-section')" class="next-btn-black">Continue</button>
         </div>
-        <button onclick="scrollToSection('form-section')" class="next-btn">Begin Assessment</button>
     </section>
 
     <section id="form-section" class="form-section">
-        <h2 class="serif-text gold-text">Tell Us About You</h2>
-        <hr class="gold-divider">
-        
-        <form id="screener-form">
-            <div class="input-container">
-                <h3>Current Grade Level</h3>
-                <div class="grade-options">
-                    <button type="button" class="chip" onclick="selectChip(this, 'grade')">Freshman</button>
-                    <button type="button" class="chip" onclick="selectChip(this, 'grade')">Sophomore</button>
-                    <button type="button" class="chip" onclick="selectChip(this, 'grade')">Junior</button>
-                    <button type="button" class="chip" onclick="selectChip(this, 'grade')">Senior</button>
+        <h2>Tell Us About You</h2>
+        <div class="form-container">
+            <div class="input-group">
+                <h3>Current Grade</h3>
+                <div class="chip-container">
+                    <span class="chip" onclick="toggleChip(this)">Freshman</span>
+                    <span class="chip" onclick="toggleChip(this)">Sophomore</span>
+                    <span class="chip" onclick="toggleChip(this)">Junior</span>
+                    <span class="chip" onclick="toggleChip(this)">Senior</span>
                 </div>
             </div>
 
-            <div class="input-container">
-                <h3>Academics</h3>
-                <textarea id="past-courses" placeholder="List your past courses (e.g., Biology, Algebra II)..."></textarea>
-                <textarea id="current-courses" placeholder="List your current courses..."></textarea>
+            <div class="input-group">
+                <h3>Your Courses (Past & Current)</h3>
+                <textarea placeholder="e.g. AP Calculus, Biology, World History..."></textarea>
             </div>
 
-            <div class="input-container">
+            <div class="input-group">
                 <h3>Interests & Extracurriculars</h3>
-                <div class="interest-grid">
-                    <label class="check-container">Mathematics <input type="checkbox"><span class="checkmark"></span></label>
-                    <label class="check-container">Sciences <input type="checkbox"><span class="checkmark"></span></label>
-                    <label class="check-container">Arts <input type="checkbox"><span class="checkmark"></span></label>
-                    <label class="check-container">Sports <input type="checkbox"><span class="checkmark"></span></label>
-                </div>
-                <input type="text" id="extracurriculars" placeholder="Notable clubs or activities (e.g., MUN, Varsity Soccer)">
+                <textarea placeholder="e.g. Varsity Soccer, MUN, Coding, Jazz Band..."></textarea>
             </div>
 
-            <button type="button" onclick="startLoading()" class="submit-btn">Generate My Profile</button>
-        </form>
+            <button onclick="startLoading()" class="gold-btn">Generate Recommendations</button>
+        </div>
     </section>
 
-    <section id="loading-section" class="loading-section hidden">
-        <div class="mustang-container">
-            <div class="mustang-spinner"></div>
-            </div>
-        <h2 class="serif-text">Analyzing your path...</h2>
+    <section id="loading-section" class="loading-area hidden">
+        <div class="mustang-spin"></div>
+        <h2>Analyzing your profile...</h2>
     </section>
 
-    <section id="results-section" class="results-section hidden">
-        <h2 class="serif-text">Recommended For You</h2>
-        <div id="recommendations-list" class="results-grid"></div>
-        <button onclick="location.reload()" class="start-btn">Reset</button>
+    <section id="results-section" class="results-area hidden">
+        <h2>Recommended Opportunities</h2>
+        <div id="results-content"></div>
+        <button onclick="location.reload()" class="gold-btn">Start Over</button>
     </section>
 
     <script src="script.js"></script>
