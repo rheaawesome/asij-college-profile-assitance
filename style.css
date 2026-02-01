@@ -1,81 +1,92 @@
 :root {
-    --asij-gold: #C5A059;
-    --black: #000000;
+    --gold: #D4AF37;
+    --black: #080808;
+    --white: #ffffff;
 }
 
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background: var(--black);
-    color: white;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* This makes the auto-scroll smooth */
+    background-color: var(--black);
+    color: var(--white);
 }
 
-/* Nav */
-.asij-nav {
-    position: absolute;
-    top: 20px;
-    left: 40px;
-    color: var(--asij-gold);
-    font-weight: 900;
-    font-size: 2.2rem;
-    z-index: 10;
+.serif-text, .main-title {
+    font-family: 'Playfair Display', serif;
+}
+
+.main-title {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 /* Hero Section */
-.hero-section {
+.hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('hero-bg.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('hero-bg.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
-.hero-section h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 6rem;
-    font-weight: 900;
-    margin-bottom: 20px;
+/* Yellow Slanted Section (Matching Inspo) */
+.info-section {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 100px 10%;
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); /* Adds the slight slant */
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.info-card {
+    background: var(--black);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-label {
+    padding: 15px;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.form-section {
+    padding: 100px 10%;
+    background: var(--black);
 }
 
 .start-btn {
-    background: var(--asij-gold);
-    border: none;
-    padding: 15px 70px;
-    font-size: 3.5rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-/* Yellow Slant Section */
-.yellow-slant-section {
-    background: var(--asij-gold);
+    background-color: var(--gold);
     color: var(--black);
-    padding: 120px 5%;
-    clip-path: polygon(0 8%, 100% 0%, 100% 92%, 0% 100%);
-    text-align: center;
+    padding: 18px 50px;
+    font-size: 1.8rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    transition: 0.3s;
 }
 
-.serif-head { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 0; }
-.sub-text { font-size: 1.4rem; font-weight: 600; max-width: 800px; margin: 20px auto 60px; }
-
-.image-row { display: flex; justify-content: center; gap: 25px; margin-bottom: 50px; }
-.img-placeholder { width: 380px; height: 260px; background-size: cover; background-position: center; }
-.img-caption { background: var(--black); color: var(--asij-gold); font-family: 'Playfair Display', serif; font-size: 1.6rem; padding: 12px; font-weight: 700; }
-
-/* Form Section */
-.form-dark-section { padding: 100px 10%; background: var(--black); }
-.accent-line { border: 1px solid var(--asij-gold); margin: 30px 0 60px; width: 100%; }
-.field-box { margin-bottom: 60px; }
-.field-box label { display: block; font-size: 1.8rem; font-weight: 600; margin-bottom: 25px; }
-
-.placeholder-text { color: #888; font-size: 1.8rem; }
-
-/* Colored Text Options */
-.opt { font-size: 1.8rem; font-weight: 700; margin-right: 25px; cursor: pointer; display: inline-block; margin-bottom: 15px; }
-.red { color: #FF5C5C; } .pink { color: #FF7EB9; } .blue { color: #5CB8FF; } .green { color: #69FF8D; }
-.lavender { color: #C5A3FF; } .sky { color: #5CE1FF; } .gold { color: #FFE05C; } .orange { color: #FFB35C; }
-.teal { color: #5CFFD1; } .magenta { color: #FF5CEE; } .babyblue { color: #A3D3FF; } .forest { color: #43A047; }
+.start-btn:hover {
+    transform: scale(1.05);
+    background-color: #b8962d;
+}
