@@ -1,52 +1,81 @@
 :root {
-    --gold: #C5A059; /* Matching the 'Start' button gold */
+    --asij-gold: #C5A059;
     --black: #000000;
 }
 
 body, html {
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     font-family: 'Montserrat', sans-serif;
     background: var(--black);
     color: white;
     scroll-behavior: smooth;
 }
 
-/* Section 1: Hero */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('hero.png') center/cover;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
+/* Nav */
+.asij-nav {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    color: var(--asij-gold);
+    font-weight: 900;
+    font-size: 2.2rem;
+    z-index: 10;
 }
-.top-nav { position: absolute; top: 20px; left: 40px; color: var(--gold); font-weight: 900; font-size: 2rem; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: 5.5rem; color: white; margin: 0; text-align: center; }
-.start-btn { background: var(--gold); border: none; padding: 20px 80px; font-size: 3rem; font-family: 'Playfair Display'; font-weight: 900; cursor: pointer; margin-top: 20px; }
 
-/* Section 2: Slanted Welcome */
-.welcome-section {
-    background: var(--gold);
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('hero-bg.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.start-btn {
+    background: var(--asij-gold);
+    border: none;
+    padding: 15px 70px;
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* Yellow Slant Section */
+.yellow-slant-section {
+    background: var(--asij-gold);
     color: var(--black);
     padding: 120px 5%;
     clip-path: polygon(0 8%, 100% 0%, 100% 92%, 0% 100%);
     text-align: center;
 }
-.serif-title { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 10px; }
-.description { font-size: 1.2rem; max-width: 700px; margin: 0 auto 50px; font-weight: 600; }
-.image-grid { display: flex; justify-content: center; gap: 20px; margin-bottom: 50px; }
-.card img { width: 350px; height: 250px; object-fit: cover; }
-.card-label { background: var(--black); color: var(--gold); font-family: 'Playfair Display'; font-size: 1.5rem; padding: 10px; margin-top: -5px; }
-.continue-btn { background: var(--black); color: var(--gold); border: none; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
 
-/* Section 3: Dark Form */
-.form-section { padding: 100px 10%; background: var(--black); }
-.gold-line { border: 1px solid var(--gold); margin: 20px 0 50px; }
-.input-block h3 { font-size: 1.5rem; margin-bottom: 20px; }
-textarea { width: 100%; background: transparent; border: none; color: #888; font-size: 1.5rem; font-family: 'Montserrat'; margin-bottom: 40px; resize: none; }
+.serif-head { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 0; }
+.sub-text { font-size: 1.4rem; font-weight: 600; max-width: 800px; margin: 20px auto 60px; }
 
-/* Multi-colored Text Buttons */
-.text-btn { font-size: 1.5rem; font-weight: bold; margin-right: 20px; cursor: pointer; display: inline-block; margin-bottom: 15px; }
-.red { color: #E57373; } .pink { color: #F06292; } .blue { color: #4FC3F7; } .green { color: #81C784; }
-.gold { color: #FFD54F; } .lavender { color: #B39DDB; } .orange { color: #FFB74D; } .sky { color: #4DD0E1; }
-.magenta { color: #F48FB1; } .lightblue { color: #90CAF9; } .darkgreen { color: #66BB6A; }
+.image-row { display: flex; justify-content: center; gap: 25px; margin-bottom: 50px; }
+.img-placeholder { width: 380px; height: 260px; background-size: cover; background-position: center; }
+.img-caption { background: var(--black); color: var(--asij-gold); font-family: 'Playfair Display', serif; font-size: 1.6rem; padding: 12px; font-weight: 700; }
 
-.hidden { display: none; }
-.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 100; }
+/* Form Section */
+.form-dark-section { padding: 100px 10%; background: var(--black); }
+.accent-line { border: 1px solid var(--asij-gold); margin: 30px 0 60px; width: 100%; }
+.field-box { margin-bottom: 60px; }
+.field-box label { display: block; font-size: 1.8rem; font-weight: 600; margin-bottom: 25px; }
+
+.placeholder-text { color: #888; font-size: 1.8rem; }
+
+/* Colored Text Options */
+.opt { font-size: 1.8rem; font-weight: 700; margin-right: 25px; cursor: pointer; display: inline-block; margin-bottom: 15px; }
+.red { color: #FF5C5C; } .pink { color: #FF7EB9; } .blue { color: #5CB8FF; } .green { color: #69FF8D; }
+.lavender { color: #C5A3FF; } .sky { color: #5CE1FF; } .gold { color: #FFE05C; } .orange { color: #FFB35C; }
+.teal { color: #5CFFD1; } .magenta { color: #FF5CEE; } .babyblue { color: #A3D3FF; } .forest { color: #43A047; }
