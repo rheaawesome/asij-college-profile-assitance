@@ -9,79 +9,75 @@
 </head>
 <body>
 
-    <section class="hero">
-        <div class="top-nav">ASIJ</div>
-        <div class="hero-center">
+    <div class="asij-nav">ASIJ</div>
+
+    <section class="hero-section">
+        <div class="hero-content">
             <h1>College Profile Screener</h1>
             <button onclick="scrollToSection('welcome')" class="start-btn">Start</button>
         </div>
     </section>
 
-    <section id="welcome" class="welcome-section">
-        <div class="welcome-content">
-            <h2 class="serif-title">Welcome ASIJ Students</h2>
-            <p class="description">Personalized recommendations for ASIJ students based on your courses, interests, and activities.</p>
+    <section id="welcome" class="yellow-slant-section">
+        <div class="content-wrapper">
+            <h2 class="serif-head">Welcome ASIJ Students</h2>
+            <p class="sub-text">Personalized recommendations for ASIJ students based on your courses, interests, and activities.</p>
             
-            <div class="image-grid">
-                <div class="card">
-                    <img src="card1.png" alt="Students with mascot">
-                    <div class="card-label">Built for ASIJ students</div>
+            <div class="image-row">
+                <div class="image-card">
+                    <div class="img-placeholder" style="background-image: url('card1.png');"></div>
+                    <div class="img-caption">Built for ASIJ students</div>
                 </div>
-                <div class="card">
-                    <img src="card2.png" alt="Students studying">
-                    <div class="card-label">Find your passion</div>
+                <div class="image-card">
+                    <div class="img-placeholder" style="background-image: url('card2.png');"></div>
+                    <div class="img-caption">Find your passion</div>
                 </div>
-                <div class="card">
-                    <img src="card3.png" alt="Mustangs sports">
-                    <div class="card-label">Discover new opportunities</div>
+                <div class="image-card">
+                    <div class="img-placeholder" style="background-image: url('card3.png');"></div>
+                    <div class="img-caption">Discover new opportunities</div>
                 </div>
             </div>
-            <button onclick="scrollToSection('form')" class="continue-btn">Continue</button>
+            <button onclick="scrollToSection('form-entry')" class="btn-continue">Continue</button>
         </div>
     </section>
 
-    <section id="form" class="form-section">
-        <h2 class="serif-title white-text">Tell Us About You</h2>
-        <hr class="gold-line">
+    <section id="form-entry" class="form-dark-section">
+        <div class="form-wrapper">
+            <h2 class="serif-head white-text">Tell Us About You</h2>
+            <hr class="accent-line">
 
-        <div class="input-block">
-            <h3>Current Grade Level</h3>
-            <div class="options">
-                <span class="text-btn red">Freshman</span>
-                <span class="text-btn pink">Sophmore</span>
-                <span class="text-btn blue">Junior</span>
-                <span class="text-btn green">Senior</span>
+            <div class="field-box">
+                <label>Current Grade Level</label>
+                <div class="text-options">
+                    <span class="opt red">Freshman</span>
+                    <span class="opt pink">Sophmore</span>
+                    <span class="opt blue">Junior</span>
+                    <span class="opt green">Senior</span>
+                </div>
+            </div>
+
+            <div class="field-box">
+                <label>Select All Courses You Have or Are Taking</label>
+                <div class="placeholder-text">have all the course options here, pull from the student handbook.</div>
+            </div>
+
+            <div class="field-box">
+                <label>Interests (Select All That Apply)</label>
+                <div class="interests-cloud">
+                    <span class="opt red">Mathematics</span>
+                    <span class="opt green">Sciences</span>
+                    <span class="opt lavender">Computer Science</span>
+                    <span class="opt sky">Engineering</span>
+                    <span class="opt gold">Business</span>
+                    <span class="opt orange">Social Sciences & Humanities</span>
+                    <span class="opt teal">Health & Medicine</span>
+                    <span class="opt magenta">Arts & Communications</span>
+                    <span class="opt babyblue">Education & Public Service</span>
+                    <span class="opt forest">Agriculture & Environmental Studies</span>
+                </div>
             </div>
         </div>
-
-        <div class="input-block">
-            <h3>Select All Courses You Have or Are Taking</h3>
-            <textarea placeholder="Pull from the student handbook..."></textarea>
-        </div>
-
-        <div class="input-block">
-            <h3>Interests (Select All That Apply)</h3>
-            <div class="interests-grid">
-                <span class="text-btn red">Mathematics</span>
-                <span class="text-btn green">Sciences</span>
-                <span class="text-btn lavender">Computer Science</span>
-                <span class="text-btn blue">Engineering</span>
-                <span class="text-btn gold">Business</span>
-                <span class="text-btn orange">Social Sciences & Humanities</span>
-                <span class="text-btn sky">Health & Medicine</span>
-                <span class="text-btn magenta">Arts & Communications</span>
-                <span class="text-btn lightblue">Education & Public Service</span>
-                <span class="text-btn darkgreen">Agriculture & Environmental Studies</span>
-            </div>
-        </div>
-
-        <button onclick="showLoading()" class="submit-trigger">Submit Profile</button>
     </section>
-
-    <div id="loading" class="overlay hidden">
-        <div class="spinner"></div>
-        <p>Analyzing ASIJ Database...</p>
-    </div>
 
     <script src="script.js"></script>
 </body>
