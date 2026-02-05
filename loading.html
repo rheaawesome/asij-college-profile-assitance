@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Takes up the full screen height */
+            overflow: hidden; /* Prevents scrolling */
+        }
+
+        img {
+            /* This ensures the image stays centered and doesn't get cut off */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; 
+        }
+    </style>
+</head>
+<body>
+
+    <img src="loading.png" alt="Loading...">
+
+    <script>
+        setTimeout(function() {
+            // currently this just alerts, but later you can change this to:
+            // window.location.href = 'results.html';
+            alert("Loading complete! (You can link this to a results page later)");
+        }, 3000); // 3000 milliseconds = 3 seconds
+    </script>
+
+</body>
+</html>
