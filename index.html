@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AStudent Activity Recommender</title>
+    <title>ASIJ Student Activity Recommender</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* THIS IS THE FIX TO CENTER EVERYTHING */
+        .hero-content {
+            display: flex;           /* Enables flexible positioning */
+            flex-direction: column;  /* Stacks title on top of button */
+            align-items: center;     /* Centers items horizontally */
+            justify-content: center; /* Centers items vertically if needed */
+            text-align: center;      /* Ensures text is centered */
+            width: 100%;             /* Ensures it takes full width to center properly */
+        }
+        
+        /* Optional: Add some space between title and button */
+        .main-title {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -37,7 +54,7 @@
             </div>
         </div>
         
-        <button onclick="scrollToSection('form-section')" class="next-btn">Next: Tell us about you</button>
+        <button onclick="window.location.href='screener.html'" class="next-btn">Next: Tell us about you</button>
     </section>
 
 </body>
